@@ -1,0 +1,67 @@
+.home {
+  height: 100%;
+  padding: 10px;
+  position: relative;
+  .hero {
+    height: 100%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px;
+      z-index: 2;
+
+      .main-text {
+        justify-self: end;
+        align-self: center;
+        grid-row: span 2;
+        font-size: 3em;
+      }
+
+      .subtext {
+        font-size: 1.8em;
+      }
+
+      h5 {
+        font-size: 1.5em;
+        grid-column: span 3;
+        place-self: center;
+        color: #f9e784;
+      }
+    }
+
+    img {
+      z-index: 2;
+      width: 35vw;
+    }
+
+    &::before {
+      content: " ";
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background-color: #f9e784;
+      z-index: 1;
+      top: 44%;
+      left: 12%;
+      opacity: 0.3;
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: " ";
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      background-color: #f9e784;
+      z-index: 1;
+      top: 7%;
+      right: 9%;
+      opacity: 0.2;
+      border-radius: 50%;
+    }
+  }
+}
