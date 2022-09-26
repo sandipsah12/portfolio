@@ -1,0 +1,18 @@
+.navigation {
+  .nav-links {
+    list-style: none;
+    display: grid;
+    justify-items: center;
+    margin: 25px 5px;
+
+    .link {
+      padding: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #8fb339;
+      }
+    }
+  }
+}

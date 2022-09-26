@@ -1,0 +1,28 @@
+.sidebar {
+  display: grid;
+  padding: 20px 20px;
+  background-color: #011627;
+  justify-items: center;
+
+  app-footer {
+    p {
+      margin: 10px auto;
+    }
+    .social-links {
+      display: grid;
+      gap: 5px;
+      grid-auto-flow: column;
+      justify-items: center;
+
+      a {
+        svg {
+          height: 35px;
+          width: 35px;
+          path {
+            fill: #f9e784;
+          }
+        }
+      }
+    }
+  }
+}
