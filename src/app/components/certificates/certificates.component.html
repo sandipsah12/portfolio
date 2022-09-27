@@ -1,0 +1,9 @@
+<div class="certificates">
+  <app-card
+    *ngFor="let certificate of certificates"
+    [cardTitle]="certificate.title"
+  >
+    <img [src]="certificate.imageSrc" />
+    <p>{{ certificate.imageDetail }}</p>
+  </app-card>
+</div>

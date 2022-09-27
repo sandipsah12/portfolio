@@ -8,9 +8,12 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { AboutMeComponent } from './components/about-me/about-me.component';
+import { CardComponent } from './components/card/card.component';
+import { CertificatesComponent } from './components/certificates/certificates.component';
 
 @NgModule({
-  declarations: [AppComponent, AvatarImageComponent, NavigationComponent, SidebarComponent, FooterComponent, HomeComponent],
+  declarations: [AppComponent, AvatarImageComponent, NavigationComponent, SidebarComponent, FooterComponent, HomeComponent, AboutMeComponent, CardComponent, CertificatesComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

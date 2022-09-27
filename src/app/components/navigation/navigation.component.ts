@@ -7,5 +7,5 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class NavigationComponent {
-  @Input() public navLinks: string[] = [];
+  @Input() public navLinks: { title: string; url: string }[] = [];
 }

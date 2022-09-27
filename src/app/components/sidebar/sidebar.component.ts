@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  public navLinks = ['Home', 'About Me', 'Certificates', 'Projects', 'Contact'];
+  public navLinks = [
+    { title: 'Home', url: '' },
+    { title: 'About Me', url: 'about' },
+    { title: 'Certificates', url: 'certificates' },
+    { title: 'Projects', url: 'projects' },
+    { title: 'Contact', url: 'contact' },
+  ];
 }

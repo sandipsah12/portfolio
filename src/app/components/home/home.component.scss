@@ -1,66 +1,98 @@
 .home {
   height: 100%;
-  padding: 10px;
-  position: relative;
+  display: grid;
+  place-items: center;
+
   .hero {
-    height: 100%;
+    position: relative;
     display: grid;
-    gap: 20px;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    max-height: 100vh;
     align-items: center;
+    justify-items: center;
+    overflow: hidden;
+
     .intro {
+      grid-row: 2 / span 3;
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 10px;
+      grid-template-columns: 1fr 4fr;
+      gap: 25px;
       z-index: 2;
+      padding: 10px 20px;
+      justify-self: flex-end;
 
       .main-text {
         justify-self: end;
         align-self: center;
         grid-row: span 2;
         font-size: 3em;
+        color: #004385;
       }
 
       .subtext {
+        display: grid;
+        text-align: left;
+        align-self: center;
+        grid-row: span 2;
         font-size: 1.8em;
+        gap: 10px;
+
+        h3:nth-child(1) {
+          color: #f9e784;
+        }
+        h3:nth-child(2) {
+          color: #8fb339;
+        }
       }
 
       h5 {
         font-size: 1.5em;
         grid-column: span 3;
-        place-self: center;
-        color: #f9e784;
+        grid-row: 3 / 5;
+        text-align: center;
+        color: #e6e6ea;
       }
     }
 
-    img {
-      z-index: 2;
-      width: 35vw;
+    .image {
+      grid-column: 2;
+      grid-row: 2 / span 3;
+      perspective: 1200px;
+      position: relative;
+
+      img {
+        max-width: 500px;
+        z-index: 2;
+        transform: rotateY(320deg);
+      }
     }
 
     &::before {
       content: " ";
+      overflow: hidden;
       width: 100px;
       height: 100px;
       position: absolute;
       background-color: #f9e784;
       z-index: 1;
-      top: 44%;
-      left: 12%;
-      opacity: 0.3;
+      top: 55%;
+      left: 5%;
+      opacity: 0.15;
       border-radius: 50%;
     }
 
     &::after {
       content: " ";
-      width: 300px;
-      height: 300px;
+      overflow: hidden;
+      width: 150px;
+      height: 150px;
       position: absolute;
       background-color: #f9e784;
       z-index: 1;
-      top: 7%;
-      right: 9%;
-      opacity: 0.2;
+      top: 5%;
+      right: 25%;
+      opacity: 0.1;
       border-radius: 50%;
     }
   }

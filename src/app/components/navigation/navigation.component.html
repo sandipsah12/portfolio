@@ -1,5 +1,13 @@
 <div class="navigation">
   <ul class="nav-links">
-    <li class="link" *ngFor="let link of navLinks">{{ link }}</li>
+    <li
+      class="link"
+      *ngFor="let link of navLinks"
+      routerLink="{{ link.url }}"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      {{ link.title }}
+    </li>
   </ul>
 </div>

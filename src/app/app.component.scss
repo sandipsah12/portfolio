@@ -1,11 +1,12 @@
 :host {
   display: grid;
   grid-template-columns: 1fr auto;
+  background-color: #011627;
+  gap: 20px;
 }
 
-main {
-  background-color: #011627;
-}
+// main {
+// }
 
 // #011627 - black
 // #F4F4F8 - white
