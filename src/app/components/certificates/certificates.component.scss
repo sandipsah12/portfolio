@@ -1,8 +1,8 @@
 .certificates {
   display: grid;
-  grid-template-columns: repeat(2, 500px);
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 25px;
-  column-gap: 10px;
+  column-gap: 25px;
   align-items: center;
   justify-items: center;
   padding: 20px 10px;
@@ -13,7 +13,7 @@
 
     img {
       width: 100%;
-      max-width: 450px;
+      max-width: 500px;
     }
 
     p {
@@ -26,6 +26,19 @@
       left: 0;
       background-color: rgba(#8fb339, 0.7);
       padding: 10px 15px;
+    }
+
+    &:nth-child(1) {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+
+    &:nth-child(2) {
+      grid-row: 3 / span 2;
+      grid-column: span 2;
+    }
+    &:last-child {
+      grid-column: 2/3;
     }
   }
 }

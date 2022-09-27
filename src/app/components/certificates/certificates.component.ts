@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ImageViewerService } from '../image-viewer/image-viewer.service';
+import { Image } from '../image-viewer/image.model';
 import { Certificate } from './certificate.model';
 
 @Component({
@@ -6,7 +9,8 @@ import { Certificate } from './certificate.model';
   templateUrl: './certificates.component.html',
   styleUrls: ['./certificates.component.scss'],
 })
-export class CertificatesComponent {
+export class CertificatesComponent implements OnInit {
+  public subscription!: Subscription;
   public certificates: Certificate[] = [
     new Certificate({
       title: 'Node.js API Masterclass With Express & MongoDB',
@@ -19,10 +23,10 @@ export class CertificatesComponent {
       imageDetail: '100 Components, Services, Directives, Pipes in Angular',
     }),
     new Certificate({
-      title: 'Hackerrank Certificate for Javascript(Intermediate)',
+      title: 'HackerRank Certificate for Javascript(Intermediate)',
       imageSrc: 'assets/certificates/javascript-intermediate.png',
       imageDetail:
-        'Hackerrank Certificate for Javascript(Intermediate) Certification Test',
+        'HackerRank Certificate for Javascript(Intermediate) Certification Test',
     }),
     new Certificate({
       title: '100 Algorithms Challenge',
@@ -41,10 +45,31 @@ export class CertificatesComponent {
       imageDetail: 'Java Training by Spoken Tutorial',
     }),
     new Certificate({
-      title: 'Hackerrank Certificate for Javascript(Basic)',
+      title: 'HackerRank Certificate for Javascript(Basic)',
       imageSrc: 'assets/certificates/javascript-basic.png',
       imageDetail:
-        'Hackerrank Certificate for Javascript(Basic) Certification Test',
+        'HackerRank Certificate for Javascript(Basic) Certification Test',
     }),
   ];
+
+  constructor(public imageViewerService: ImageViewerService) {}
+
+  public ngOnInit(): void {
+    // this.subscription = this.imageViewerService.imageService$.subscribe(
+    //   (data) => {
+    //     console.log(data);
+    //   }
+    // );
+  }
+  public openImageViewer(id: number) {
+    const images: Image[] = this.certificates.map(
+      (certificate) =>
+        new Image({
+          imageSrc: certificate.imageSrc,
+          imageDetail: certificate.imageDetail,
+        })
+    );
+
+    this.imageViewerService.openImageViewer(images, id);
+  }
 }

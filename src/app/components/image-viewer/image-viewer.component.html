@@ -1,0 +1,25 @@
+<app-overlay (overlayClosed)="closeImageViewer()"></app-overlay>
+<div class="image-viewer" *ngIf="images && currentImage.url">
+  <div class="image">
+    <button [disabled]="currentImage.index === 0" (click)="prevImage()">
+      <
+    </button>
+    <img *ngIf="images.length" [src]="currentImage.url" />
+    <button
+      [disabled]="currentImage.index === images.length - 1"
+      (click)="nextImage()"
+    >
+      >
+    </button>
+  </div>
+  <div class="images-roll">
+    <div
+      class="roll-image"
+      *ngFor="let image of images; let i = index"
+      (click)="updateImage(i)"
+      [class.selected]="currentImage.index === i"
+    >
+      <img src="{{ image.imageSrc }}" />
+    </div>
+  </div>
+</div>

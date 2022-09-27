@@ -11,11 +11,28 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { CardComponent } from './components/card/card.component';
 import { CertificatesComponent } from './components/certificates/certificates.component';
+import { ImageViewerComponent } from './components/image-viewer/image-viewer.component';
+import { OverlayComponent } from './components/overlay/overlay.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ImageViewerService } from './components/image-viewer/image-viewer.service';
 
 @NgModule({
-  declarations: [AppComponent, AvatarImageComponent, NavigationComponent, SidebarComponent, FooterComponent, HomeComponent, AboutMeComponent, CardComponent, CertificatesComponent],
+  declarations: [
+    AppComponent,
+    AvatarImageComponent,
+    NavigationComponent,
+    SidebarComponent,
+    FooterComponent,
+    HomeComponent,
+    AboutMeComponent,
+    CardComponent,
+    CertificatesComponent,
+    ImageViewerComponent,
+    OverlayComponent,
+    ProjectsComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  providers: [ImageViewerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

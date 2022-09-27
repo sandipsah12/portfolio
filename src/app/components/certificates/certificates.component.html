@@ -1,7 +1,8 @@
 <div class="certificates">
   <app-card
-    *ngFor="let certificate of certificates"
+    *ngFor="let certificate of certificates; let i = index"
     [cardTitle]="certificate.title"
+    (click)="openImageViewer(i)"
   >
     <img [src]="certificate.imageSrc" />
     <p>{{ certificate.imageDetail }}</p>

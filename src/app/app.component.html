@@ -1,4 +1,13 @@
-<app-sidebar></app-sidebar>
-<main>
-  <router-outlet></router-outlet>
-</main>
+<app-image-viewer
+  *ngIf="isImageViewerOpen"
+  [images]="images"
+  [currentImage]="currentImage"
+  (imageViewerStatus)="updateImageViewerStaus($event)"
+></app-image-viewer>
+
+<div class="app">
+  <app-sidebar></app-sidebar>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
