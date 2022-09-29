@@ -3,9 +3,9 @@
   grid-template-columns: repeat(3, 1fr);
   row-gap: 25px;
   column-gap: 25px;
-  align-items: center;
+  align-items: end;
   justify-items: center;
-  padding: 20px 10px;
+  padding: 40px 40px 10px 20px;
   app-card {
     position: relative;
     cursor: pointer;
@@ -13,7 +13,7 @@
 
     img {
       width: 100%;
-      max-width: 500px;
+      // max-width: 500px;
     }
 
     p {
@@ -38,7 +38,9 @@
       grid-column: span 2;
     }
     &:last-child {
-      grid-column: 2/3;
+      grid-row: span 2;
+      grid-column: span 2;
+      // grid-column: 2/3;
     }
   }
 }

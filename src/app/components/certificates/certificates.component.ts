@@ -22,12 +22,7 @@ export class CertificatesComponent implements OnInit {
       imageSrc: 'assets/certificates/100-angular-challenges.jpg',
       imageDetail: '100 Components, Services, Directives, Pipes in Angular',
     }),
-    new Certificate({
-      title: 'HackerRank Certificate for Javascript(Intermediate)',
-      imageSrc: 'assets/certificates/javascript-intermediate.png',
-      imageDetail:
-        'HackerRank Certificate for Javascript(Intermediate) Certification Test',
-    }),
+
     new Certificate({
       title: '100 Algorithms Challenge',
       imageSrc: 'assets/certificates/100-algorithms-challenges.jpg',
@@ -49,6 +44,12 @@ export class CertificatesComponent implements OnInit {
       imageSrc: 'assets/certificates/javascript-basic.png',
       imageDetail:
         'HackerRank Certificate for Javascript(Basic) Certification Test',
+    }),
+    new Certificate({
+      title: 'HackerRank Certificate for Javascript(Intermediate)',
+      imageSrc: 'assets/certificates/javascript-intermediate.png',
+      imageDetail:
+        'HackerRank Certificate for Javascript(Intermediate) Certification Test',
     }),
   ];
 

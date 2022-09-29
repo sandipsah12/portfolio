@@ -4,7 +4,7 @@
     [cardTitle]="certificate.title"
     (click)="openImageViewer(i)"
   >
-    <img [src]="certificate.imageSrc" />
+    <img src="{{ certificate.imageSrc }}" appLazyLoadImage />
     <p>{{ certificate.imageDetail }}</p>
   </app-card>
 </div>

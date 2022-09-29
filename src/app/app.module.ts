@@ -15,6 +15,7 @@ import { ImageViewerComponent } from './components/image-viewer/image-viewer.com
 import { OverlayComponent } from './components/overlay/overlay.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ImageViewerService } from './components/image-viewer/image-viewer.service';
+import { LazyLoadImageDirective } from './directives/lazy-load-image.directive';
 
 @NgModule({
   declarations: [
@@ -30,9 +31,10 @@ import { ImageViewerService } from './components/image-viewer/image-viewer.servi
     ImageViewerComponent,
     OverlayComponent,
     ProjectsComponent,
+    LazyLoadImageDirective,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [ImageViewerService],
+  providers: [ImageViewerService, { provide: 'Window', useValue: window }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

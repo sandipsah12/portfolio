@@ -1,9 +1,10 @@
 .about {
   display: grid;
   gap: 20px;
-  padding: 20px 10px;
+  padding: 40px 40px 10px 20px;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  // height: 100vh;
   p {
     font-size: 1.1em;
     line-height: 1.5;
@@ -14,5 +15,9 @@
   .carrer,
   .work {
     grid-column: span 2;
+  }
+
+  .education {
+    height: 100%;
   }
 }
