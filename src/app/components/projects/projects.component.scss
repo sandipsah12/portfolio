@@ -1,0 +1,13 @@
+.projects {
+  padding: 40px 40px 20px 10px;
+
+  a {
+    text-decoration: none;
+    margin: 0px 20px;
+    color: #e6e6ea;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0px 20px 10px 20px;
+  }
+}

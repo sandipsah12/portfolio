@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
   public navLinks = [
     { title: 'Home', url: '' },
-    { title: 'About Me', url: 'about' },
+    { title: 'About', url: 'about' },
     { title: 'Certificates', url: 'certificates' },
     { title: 'Projects', url: 'projects' },
     { title: 'Contact', url: 'contact' },

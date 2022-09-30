@@ -1,0 +1,11 @@
+<div class="projects">
+  <div class="live-projects"></div>
+
+  <div class="other-projects">
+    <a href="{{ repo.url }}" *ngFor="let repo of repos" target="blank">
+      <app-card [cardTitle]="repo.name">
+        <p>{{ repo.description }}</p>
+      </app-card>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="contact">
+  <app-card [cardTitle]="'Contact Us'">
+    <form
+      [formGroup]="form"
+      name="contact"
+      id="contact-form"
+      method="post"
+      (ngSubmit)="handleFormSubmit()"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display: none">
+        <label
+          >Don’t fill this out if you're human: <input name="bot-field"
+        /></label>
+      </p>
+      <div
+        class="name"
+        [class.error]="
+          form.controls['name'].errors && form.controls['name'].touched
+        "
+      >
+        <label for="name">Your Name: </label>
+        <input type="text" name="name" id="name" formControlName="name" />
+        <span class="error">Name is required.</span>
+      </div>
+
+      <div
+        class="email"
+        [class.error]="
+          form.controls['email'].errors && form.controls['email'].touched
+        "
+      >
+        <label for="email">Your Email: </label>
+        <input type="email" name="email" id="email" formControlName="email" />
+        <span class="error">{{
+          form.value?.email?.length
+            ? "Invalid Email. Example pattern - test@test.com"
+            : "Email is required."
+        }}</span>
+      </div>
+      <div class="message">
+        <label for="message">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          formControlName="message"
+        ></textarea>
+      </div>
+      <div data-netlify-recaptcha="true"></div>
+      <p>
+        <button
+          type="submit"
+          [disabled]="
+            form.controls['name'].touched &&
+            form.controls['email'].touched &&
+            form.status === 'INVALID'
+          "
+        >
+          Send
+        </button>
+      </p>
+    </form>
+  </app-card>
+</div>

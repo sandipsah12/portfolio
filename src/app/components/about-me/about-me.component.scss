@@ -1,23 +1,32 @@
 .about {
   display: grid;
   gap: 20px;
-  padding: 40px 40px 10px 20px;
+  padding: 20px 40px 10px 20px;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  // height: 100vh;
+
   p {
     font-size: 1.1em;
     line-height: 1.5;
     margin: 5px 20px;
-    // color: #f9e784;
   }
 
-  .carrer,
+  .objective,
   .work {
     grid-column: span 2;
   }
 
   .education {
     height: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: grid;
+    padding: 0px 20px 10px 20px;
+
+    .education,
+    .technical {
+      grid-column: span 2;
+    }
   }
 }

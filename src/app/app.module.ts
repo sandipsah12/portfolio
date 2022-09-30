@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,9 @@ import { OverlayComponent } from './components/overlay/overlay.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ImageViewerService } from './components/image-viewer/image-viewer.service';
 import { LazyLoadImageDirective } from './directives/lazy-load-image.directive';
+import { ContactComponent } from './components/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { GithubRepoService } from './components/projects/github-repo.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +36,19 @@ import { LazyLoadImageDirective } from './directives/lazy-load-image.directive';
     OverlayComponent,
     ProjectsComponent,
     LazyLoadImageDirective,
+    ContactComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [ImageViewerService, { provide: 'Window', useValue: window }],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+  ],
+  providers: [
+    ImageViewerService,
+    { provide: 'Window', useValue: window },
+    GithubRepoService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

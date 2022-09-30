@@ -1,0 +1,76 @@
+.contact {
+  display: grid;
+  padding: 40px 40px 20px 10px;
+  text-align: center;
+
+  form {
+    display: grid;
+    padding: 20px;
+    width: 100%;
+    justify-items: left;
+    text-align: left;
+
+    .name,
+    .email,
+    .message {
+      display: grid;
+      width: 100%;
+
+      label {
+        color: #f9e784;
+        font-size: 1.1rem;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px 20px;
+        margin-top: 20px;
+        color: #011627;
+        font-size: 1rem;
+      }
+
+      textarea {
+        height: 8em;
+        outline: none;
+      }
+
+      span {
+        padding: 5px 0;
+        display: block;
+        color: #d05353;
+        visibility: hidden;
+      }
+
+      &.error {
+        span {
+          visibility: visible;
+        }
+
+        input {
+          border: 1px solid #d05353;
+        }
+      }
+    }
+
+    button {
+      padding: 20px 40px;
+      background-color: #8fb339;
+      color: #e6e6ea;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:disabled {
+        cursor: default;
+        background-color: #e6e6ea;
+        color: #011627;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0px 20px 10px 20px;
+  }
+}
