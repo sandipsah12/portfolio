@@ -8,12 +8,26 @@ import { GithubRepo } from './githubRepo.model';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-  public repos: GithubRepo[] = [];
+  public liveRepos: GithubRepo[] = [];
+  public otherRepos: GithubRepo[] = [];
+
   constructor(public githubRepoService: GithubRepoService) {}
 
   ngOnInit(): void {
     this.githubRepoService.getMyRepos().subscribe((repos: GithubRepo[]) => {
-      this.repos = repos;
+      this.liveRepos = repos.filter((repo) => repo.watchers);
+      this.otherRepos = repos.filter((repo) => !repo.watchers);
+
+      this.liveRepos.forEach((repo) => {
+        if (repo.name === '100 Angular Challenges')
+          repo.demoUrl = 'https://angular-challenges.netlify.app/';
+        if (repo.name === 'React Sorting Visualizer')
+          repo.demoUrl = 'https://sortingvisualizerreact.netlify.app/';
+      });
+
+      const temp = this.liveRepos[1];
+      this.liveRepos[1] = this.liveRepos[0];
+      this.liveRepos[0] = temp;
     });
   }
 }

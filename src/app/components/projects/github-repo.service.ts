@@ -20,7 +20,7 @@ export class GithubRepoService {
             .split('-')
             .map((el: string) => el[0].toUpperCase() + el.slice(1))
             .join(' ');
-          mappedData.url = data.html_url;
+          mappedData.githubUrl = data.html_url;
           mappedData.watchers = data.watchers;
 
           return mappedData;

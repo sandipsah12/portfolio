@@ -1,11 +1,34 @@
-<div class="projects">
-  <div class="live-projects"></div>
-
-  <div class="other-projects">
-    <a href="{{ repo.url }}" *ngFor="let repo of repos" target="blank">
+<div class="projects" *ngIf="liveRepos.length || otherRepos.length">
+  <h4>Live Projects</h4>
+  <div class="live-projects">
+    <div *ngFor="let repo of liveRepos" target="blank" class="project">
       <app-card [cardTitle]="repo.name">
-        <p>{{ repo.description }}</p>
+        <div class="description">
+          <p>{{ repo.description }}</p>
+        </div>
+        <div class="links">
+          <a href="{{ repo.githubUrl }}" target="blank" class="github"
+            >Github Repo</a
+          >
+          <a href="{{ repo.demoUrl }}" target="blank" class="demo">View Demo</a>
+        </div>
       </app-card>
-    </a>
+    </div>
+  </div>
+
+  <h4 class="other-projects">Other Projects</h4>
+  <div class="other-projects">
+    <div *ngFor="let repo of otherRepos" target="blank" class="project">
+      <app-card [cardTitle]="repo.name">
+        <div class="description">
+          <p>{{ repo.description }}</p>
+        </div>
+        <div class="links">
+          <a href="{{ repo.githubUrl }}" target="blank" class="github"
+            >Github Repo</a
+          >
+        </div>
+      </app-card>
+    </div>
   </div>
 </div>

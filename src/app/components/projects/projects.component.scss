@@ -1,13 +1,57 @@
 .projects {
   padding: 20px 40px 20px 10px;
 
-  a {
-    text-decoration: none;
-    margin: 0px 20px;
-    color: #e6e6ea;
+  h4 {
+    font-size: 1.5rem;
+    color: #f9e784;
+    margin-bottom: 20px;
+
+    &.other-projects {
+      margin-top: 20px;
+    }
+  }
+
+  .live-projects,
+  .other-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    .project {
+      app-card {
+        .links {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          text-align: center;
+          align-items: center;
+          margin: 20px 10px 10px 0px;
+          a {
+            display: block;
+            text-decoration: none;
+            border: 1px solid #011627;
+            padding: 10px 25px;
+            color: #e6e6ea;
+
+            &.demo {
+              background-color: #004385;
+            }
+
+            &.github {
+              color: #011627;
+              background-color: #f9e784;
+            }
+          }
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 768px) {
     padding: 0px 20px 10px 20px;
+    .live-projects,
+    .other-projects {
+      grid-template-columns: 1fr;
+    }
   }
 }
