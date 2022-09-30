@@ -1,9 +1,6 @@
 .image-viewer {
   position: relative;
-  // top: 0;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
+
   .image {
     position: fixed;
     top: 50px;
@@ -15,8 +12,8 @@
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     gap: 25px;
+    min-width: 450px;
     max-width: 700px;
-    max-height: 500px;
 
     button {
       height: 50px;
@@ -56,8 +53,8 @@
       cursor: pointer;
 
       img {
-        max-width: 150px;
-        max-height: 150px;
+        max-width: 100px;
+        max-height: 100px;
       }
 
       &.selected {
@@ -66,4 +63,8 @@
       }
     }
   }
+
+  // @media screen and (max-width: 1024px) {
+  //   display: none;
+  // }
 }

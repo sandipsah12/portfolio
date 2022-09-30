@@ -1,6 +1,7 @@
 .home {
   display: grid;
   place-items: center;
+  height: 100vh;
 
   .hero {
     position: relative;
@@ -45,7 +46,7 @@
       }
 
       h5 {
-        font-size: 1.5em;
+        font-size: 1.2em;
         grid-column: span 3;
         grid-row: 3 / 5;
         text-align: center;
@@ -96,10 +97,8 @@
   }
 
   @media screen and (max-width: 500px) {
-    grid-template-rows: 0.5fr 1fr 0.5fr;
-
+    height: calc(100vh - 100px);
     .hero {
-      grid-row: 2/3;
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr;
@@ -127,10 +126,39 @@
   }
 
   @media screen and (min-width: 501px) and (max-width: 768px) {
-    grid-template-rows: 0.5fr 1fr 0.5fr;
+    height: calc(100vh - 165px);
     .hero {
       display: grid;
       grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+
+      &::before {
+        content: "";
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+      }
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        top: 0;
+        right: 0;
+      }
+
+      .image {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
 
       &::before {
         content: "";

@@ -29,7 +29,6 @@ export class AppComponent implements OnInit, OnDestroy {
           index: index,
           url: this.images[index].imageSrc,
         };
-        console.log(this.currentImage);
         this.isImageViewerOpen = true;
       }
     );

@@ -14,7 +14,6 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.githubRepoService.getMyRepos().subscribe((repos: GithubRepo[]) => {
       this.repos = repos;
-      console.log(this.repos);
     });
   }
 }

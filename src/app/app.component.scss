@@ -1,23 +1,14 @@
 .app {
   display: grid;
-  grid-template-columns: minmax(300px, 350px) auto;
+  grid-template-columns: minmax(200px, 250px) auto;
   gap: 20px;
 
-  @media screen and (max-width: 500px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-  }
-
-  @media screen and (min-width: 501px) and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
   }
 }
-
-// main {
-// }
 
 // #011627 - black
 // #F4F4F8 - white

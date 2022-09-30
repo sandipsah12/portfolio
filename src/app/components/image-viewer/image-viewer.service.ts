@@ -11,7 +11,6 @@ export class ImageViewerService {
   constructor() {}
 
   openImageViewer(images: Image[], index: number) {
-    console.log(images);
     this.imageService$.next({ images, index });
   }
 }
